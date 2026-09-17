@@ -1,6 +1,5 @@
-import { config } from './config.js';
-import { MongoClient } from "mongodb";
 import { config } from "./config.js";
+import { MongoClient } from "mongodb";
 
 let clientPromise;
 
@@ -13,11 +12,13 @@ export async function getDb() {
       connectTimeoutMS: 8000,
       appName: "ganpati-mandal-locator"
     });
+
     clientPromise = client.connect().catch((error) => {
       clientPromise = null;
       throw new Error(`MongoDB connection failed: ${error.message}`);
     });
   }
+
   const client = await clientPromise;
   return client.db(config.mongodbDb);
 }

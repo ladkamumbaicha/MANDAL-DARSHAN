@@ -1,9 +1,15 @@
 import { config } from "./config.js";
 import { MongoClient } from "mongodb";
 
-let clientPromise;
+let clientPromise = null;
 
 export async function getDb() {
+  if (!config.mongodbUri) {
+    throw new Error(
+      "MONGODB_URI environment variable is not configured."
+    );
+  }
+
   if (!clientPromise) {
     const client = new MongoClient(config.mongodbUri, {
       maxPoolSize: 10,
@@ -15,10 +21,14 @@ export async function getDb() {
 
     clientPromise = client.connect().catch((error) => {
       clientPromise = null;
-      throw new Error(`MongoDB connection failed: ${error.message}`);
+
+      throw new Error(
+        `MongoDB connection failed: ${error.message}`
+      );
     });
   }
 
   const client = await clientPromise;
+
   return client.db(config.mongodbDb);
 }

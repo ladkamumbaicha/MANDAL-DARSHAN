@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ganpatimandallocator.dpdns.org/sitemap.xml

@@ -1,4 +1,4 @@
-import { Grid2X2, ListFilter, Map, Search } from "lucide-react";
+import { ListFilter, Map, Search, Sparkles, SlidersHorizontal } from "lucide-react";
 import MandalCard from "./MandalCard";
 
 export default function ExploreSection({
@@ -17,15 +17,19 @@ export default function ExploreSection({
 }) {
   return (
     <section className="section-shell content-section" id="explore-section">
-      <div className="section-heading">
-        <div>
-          <span className="section-kicker">Browse</span>
-          <h2>Explore All Mandals</h2>
+      <div className="explore-hero-heading">
+        <div className="explore-title-block">
+          <span className="section-kicker"><Sparkles size={14} /> DARSHAN DIRECTORY</span>
+          <h2>Discover Your Next<br /><em>Ganpati Darshan</em></h2>
+          <p>Explore mandals by neighbourhood, save your favourites and open every listing for complete darshan details.</p>
         </div>
-        <span className="result-count">{mandals.length} results</span>
+        <div className="explore-result-card">
+          <strong>{mandals.length}</strong>
+          <span>Mandals listed</span>
+        </div>
       </div>
 
-      <div className="filter-bar">
+      <div className="filter-bar filter-bar-new"><div className="filter-heading"><SlidersHorizontal size={17} /> Find a mandal</div>
         <label className="filter-search">
           <Search size={19} />
           <input
@@ -47,9 +51,9 @@ export default function ExploreSection({
           ♡ Saved
         </button>
 
-        <a className="chip" href="#map-section">
+        <a className="chip map-chip-new" href="#map-section">
           <Map size={16} />
-          Map
+          Open map
         </a>
       </div>
 

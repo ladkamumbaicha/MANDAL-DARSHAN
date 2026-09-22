@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
 import {
-  X,
   MapPin,
   Clock3,
   BellRing,
@@ -140,8 +139,8 @@ export default function DetailModal({ mandal, onClose }) {
         aria-labelledby="mandal-detail-title"
         tabIndex={-1}
       >
-        <button type="button" className="modal-close" onClick={onClose} aria-label="Close">
-          <X size={20} />
+        <button type="button" className="modal-close modal-close-text" onClick={onClose} aria-label="Close mandal details">
+          Close
         </button>
 
         {image ? (

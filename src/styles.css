@@ -5807,3 +5807,148 @@ body::after {
     filter: blur(6px);
   }
 }
+
+/* =========================================================
+   NEW COLORFUL DARSHAN DIRECTORY / NON-GLASS MANDAL CARDS
+   ========================================================= */
+:root {
+  --saffron: #f97316;
+  --saffron-deep: #c2410c;
+  --turmeric: #f4b942;
+  --lotus: #e85d75;
+  --leaf: #2f855a;
+  --temple-red: #8f1d2c;
+  --cream: #fff8ed;
+  --ink-deep: #24140e;
+}
+
+body {
+  background:
+    radial-gradient(circle at 8% 8%, rgba(249,115,22,.14), transparent 24rem),
+    radial-gradient(circle at 92% 38%, rgba(232,93,117,.10), transparent 25rem),
+    linear-gradient(180deg,#fffaf2 0%,#fff7ec 46%,#fffdf9 100%);
+}
+
+/* Make the overall page feel like a new editorial directory. */
+.explore-hero-heading {
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:28px;
+  align-items:end;
+  margin:34px 0 22px;
+}
+.explore-title-block .section-kicker {
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  color:var(--saffron-deep);
+  font-weight:800;
+  letter-spacing:.16em;
+  font-size:11px;
+}
+.explore-title-block h2 {
+  margin:8px 0 10px;
+  max-width:720px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(38px,5vw,66px);
+  line-height:.98;
+  letter-spacing:-.045em;
+  color:#2a1710;
+}
+.explore-title-block h2 em {
+  color:var(--saffron-deep);
+  font-style:normal;
+}
+.explore-title-block p {
+  max-width:650px;
+  margin:0;
+  color:#786b62;
+  font-size:15px;
+  line-height:1.75;
+}
+.explore-result-card {
+  min-width:150px;
+  padding:20px 24px;
+  border-radius:22px;
+  background:linear-gradient(145deg,#8f1d2c,#c2410c);
+  color:#fff;
+  box-shadow:0 18px 42px rgba(143,29,44,.2);
+  text-align:left;
+}
+.explore-result-card strong { display:block; font:700 38px/1 Georgia,serif; }
+.explore-result-card span { display:block; margin-top:5px; opacity:.78; font-size:12px; text-transform:uppercase; letter-spacing:.12em; }
+
+.filter-bar-new {
+  position:relative;
+  display:grid;
+  grid-template-columns:auto minmax(220px,1fr) 180px auto auto;
+  align-items:center;
+  gap:10px;
+  padding:12px;
+  margin-bottom:28px;
+  background:#2d1912;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:20px;
+  box-shadow:0 18px 50px rgba(64,31,16,.15);
+}
+.filter-heading { display:flex; align-items:center; gap:8px; color:#ffe8c9; padding:0 10px; font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.1em; }
+.filter-bar-new .filter-search { background:#fff; border:0; border-radius:13px; min-height:48px; }
+.filter-bar-new select { min-height:48px; border:0; border-radius:13px; background:#fff8ef; }
+.filter-bar-new .chip { min-height:46px; border-color:rgba(255,255,255,.16); color:#fff4e8; background:rgba(255,255,255,.08); }
+.filter-bar-new .chip-active { background:var(--saffron); border-color:var(--saffron); }
+.filter-bar-new .map-chip-new { background:var(--turmeric); color:#3b2309; border-color:var(--turmeric); font-weight:800; }
+
+/* Cards deliberately have ZERO glass / backdrop-filter. */
+.mandal-card-new {
+  position:relative;
+  overflow:hidden;
+  background:#fff;
+  border:1px solid #eadfd3;
+  border-radius:28px;
+  box-shadow:0 16px 42px rgba(80,43,18,.09);
+  backdrop-filter:none !important;
+  -webkit-backdrop-filter:none !important;
+  transition:transform .55s cubic-bezier(.2,.8,.2,1), box-shadow .55s ease, border-color .35s ease;
+}
+.mandal-card-new:hover {
+  transform:translateY(-10px);
+  border-color:#f2b36d;
+  box-shadow:0 28px 65px rgba(80,43,18,.16);
+}
+.mandal-card-new::before,.mandal-card-new::after { display:none !important; }
+.mandal-card-new .mandal-card-image-wrap { height:245px; background:#27130d; }
+.mandal-card-new .card-image-button { width:100%; height:100%; border:0; padding:0; background:transparent; }
+.mandal-card-new .card-image { width:100%; height:100%; object-fit:cover; transition:transform .8s cubic-bezier(.2,.8,.2,1); }
+.mandal-card-new:hover .card-image { transform:scale(1.055); }
+.mandal-image-shade { position:absolute; inset:0; background:linear-gradient(180deg,rgba(23,8,3,.08) 25%,rgba(23,8,3,.78) 100%); pointer-events:none; }
+.mandal-photo-label { position:absolute; top:16px; left:16px; display:flex; align-items:center; gap:6px; padding:8px 11px; border-radius:999px; background:#fff8eb; color:#8f1d2c; font-size:10px; font-weight:900; text-transform:uppercase; letter-spacing:.08em; box-shadow:0 8px 22px rgba(0,0,0,.14); }
+.mandal-photo-count { position:absolute; right:17px; bottom:16px; color:#ffe3ad; font-size:10px; font-weight:900; letter-spacing:.22em; }
+.mandal-card-content { padding:22px 22px 20px; }
+.mandal-card-eyebrow { color:#c2410c; font-size:10px; font-weight:900; letter-spacing:.14em; text-transform:uppercase; }
+.mandal-card-new .mandal-title-row { margin-top:7px; }
+.mandal-card-new .mandal-title-content h3 { margin:0; color:#24140e; font:700 25px/1.1 Georgia,"Times New Roman",serif; letter-spacing:-.025em; }
+.mandal-card-new .marathi-name { margin:6px 0 0; color:#a06d45; font-size:13px; }
+.mandal-address-new { margin-top:15px; display:flex; align-items:flex-start; gap:8px; color:#6d625b; font-size:13px; line-height:1.45; }
+.mandal-address-new svg { flex:0 0 auto; color:#d15c21; margin-top:1px; }
+.mandal-meta-row { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:17px; padding-top:15px; border-top:1px solid #eee3d8; }
+.mandal-meta-row span { display:flex; align-items:center; gap:6px; color:#6f6259; font-size:11px; line-height:1.3; }
+.mandal-meta-row svg { color:#c2410c; }
+.mandal-card-actions-new { margin-top:18px; }
+.mandal-open-button { width:100%; display:flex; align-items:center; justify-content:center; gap:8px; min-height:48px; border:0; border-radius:14px; background:linear-gradient(100deg,#c2410c,#f97316); color:#fff; font-weight:800; box-shadow:0 10px 24px rgba(194,65,12,.2); transition:transform .25s ease,box-shadow .25s ease; }
+.mandal-open-button:hover { transform:translateY(-2px); box-shadow:0 14px 30px rgba(194,65,12,.28); }
+
+/* Replace the modal X icon with a clear text close action. */
+.modal-close-text { width:auto !important; min-width:76px; height:40px !important; padding:0 15px !important; border-radius:999px !important; background:#fff8ed !important; color:#8f1d2c !important; border:1px solid #f0d8bd !important; font-size:12px !important; font-weight:900 !important; letter-spacing:.04em; box-shadow:0 8px 20px rgba(40,20,10,.12); }
+
+@media (max-width:900px) {
+  .explore-hero-heading { grid-template-columns:1fr; }
+  .explore-result-card { width:max-content; }
+  .filter-bar-new { grid-template-columns:1fr 1fr; }
+  .filter-heading { display:none; }
+}
+@media (max-width:620px) {
+  .explore-title-block h2 { font-size:40px; }
+  .filter-bar-new { grid-template-columns:1fr; }
+  .mandal-card-new .mandal-card-image-wrap { height:220px; }
+  .mandal-card-content { padding:19px; }
+}

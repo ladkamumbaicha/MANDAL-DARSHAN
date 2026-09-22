@@ -21,6 +21,8 @@ import {
 } from "../utils/aagman";
 
 const FIELD_KEYS = {
+  latitude: ["lat", "latitude"],
+  longitude: ["lng", "longitude"],
   image: ["image", "imageUrl", "photo", "imageURL"],
   nameMr: ["nameMr", "marathiName"],
   area: ["area"],
@@ -108,6 +110,8 @@ export default function DetailModal({ mandal, onClose }) {
   const address = readValue(mandal, FIELD_KEYS.address);
   const description = readValue(mandal, FIELD_KEYS.description);
   const directions = readValue(mandal, FIELD_KEYS.directions);
+  const latitude = readValue(mandal, FIELD_KEYS.latitude);
+  const longitude = readValue(mandal, FIELD_KEYS.longitude);
 
   const hasAagman = Boolean(getAagmanDateTime(mandal));
   const aagmanDate = formatAagmanDate(mandal);
@@ -265,23 +269,23 @@ export default function DetailModal({ mandal, onClose }) {
             </section>
           )}
 
-          {(mandal.lat || mandal.lng || mandal.latitude || mandal.longitude) && (
+          {(latitude || longitude) && (
             <section className="detail-panel">
               <h3>
                 <MapPin size={18} />
                 Location
               </h3>
               <div className="coordinates">
-                {(mandal.lat || mandal.latitude) && (
+                {latitude && (
                   <div>
                     <span>Latitude</span>
-                    <strong>{mandal.lat || mandal.latitude}</strong>
+                    <strong>{latitude}</strong>
                   </div>
                 )}
-                {(mandal.lng || mandal.longitude) && (
+                {longitude && (
                   <div>
                     <span>Longitude</span>
-                    <strong>{mandal.lng || mandal.longitude}</strong>
+                    <strong>{longitude}</strong>
                   </div>
                 )}
               </div>

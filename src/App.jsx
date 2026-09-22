@@ -15,7 +15,7 @@ import DetailModal from "./components/DetailModal";
 import BottomNav from "./components/BottomNav";
 import Footer from "./components/Footer";
 import Countdown from "./components/Countdown";
-import Timeline from "./components/Timeline";
+import FestivalTimeline from "./components/FestivalTimeline";
 import CommunityPopup from "./components/CommunityPopup";
 import AdminPage from "./components/AdminPage";
 
@@ -160,8 +160,10 @@ function PublicApp() {
 
   useEffect(() => {
     const timer = window.setTimeout(() => {
-      setShowCommunityPopup(true);
-    }, 1200);
+      if (sessionStorage.getItem("community-popup-dismissed") !== "1") {
+        setShowCommunityPopup(true);
+      }
+    }, 1800);
     return () => window.clearTimeout(timer);
   }, []);
 
@@ -308,7 +310,7 @@ function PublicApp() {
           />
         </section>
 
-        <Timeline />
+        <FestivalTimeline />
 
         <Countdown />
       </main>

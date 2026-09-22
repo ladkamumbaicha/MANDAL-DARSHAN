@@ -166,6 +166,59 @@ function PublicApp() {
     return () => window.clearTimeout(timer);
   }, []);
 
+  // Premium scroll-reveal system: animate sections/cards as they enter the viewport.
+  useEffect(() => {
+    const selector = [
+      "main > section",
+      ".mandal-card",
+      ".map-shell",
+      ".countdown-section",
+      ".stats",
+      ".content-section",
+      ".footer-grid > *",
+      ".community-popup"
+    ].join(",");
+
+    const reveal = () => {
+      const elements = document.querySelectorAll(selector);
+      if (!elements.length) return;
+
+      if (!("IntersectionObserver" in window)) {
+        elements.forEach((el) => el.classList.add("is-visible"));
+        return;
+      }
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.12,
+          rootMargin: "0px 0px -8% 0px"
+        }
+      );
+
+      elements.forEach((el, index) => {
+        el.classList.add("scroll-reveal");
+        el.style.setProperty("--reveal-delay", `${Math.min(index % 6, 5) * 70}ms`);
+        observer.observe(el);
+      });
+
+      return () => observer.disconnect();
+    };
+
+    const cleanup = reveal();
+
+    return () => {
+      if (typeof cleanup === "function") cleanup();
+    };
+  }, [mandals.length, filtered.length]);
+
   function chooseArea(value) {
     setArea(value);
     scrollTo("explore-section");

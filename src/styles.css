@@ -5599,3 +5599,211 @@ body::after { content:"ॐ"; position:fixed; left:50%; top:50%; transform:transl
 .hero-orbit { animation:templeFloat 13s ease-in-out infinite; }
 @keyframes templeFloat { 0%,100%{transform:translate3d(0,0,0) rotate(0deg)} 50%{transform:translate3d(0,-18px,0) rotate(2deg)} }
 @media (prefers-reduced-motion:reduce) { html{scroll-behavior:auto} *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}.animate-section,.mandal-card,.glass-panel,.admin-card{opacity:1;transform:none;filter:none} }
+
+/* =========================================================
+   20. SUPER GLASS + CINEMATIC SCROLL EXPERIENCE
+   ========================================================= */
+
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.46);
+  --glass-bg-strong: rgba(255, 255, 255, 0.62);
+  --glass-border: rgba(255, 255, 255, 0.78);
+  --glass-shadow: 0 24px 80px rgba(72, 39, 12, 0.13), 0 2px 14px rgba(255, 255, 255, 0.45) inset;
+  --temple-gold: #d6a84a;
+  --temple-saffron: #e96822;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 105px;
+}
+
+body {
+  background:
+    radial-gradient(circle at 8% 8%, rgba(232, 145, 42, .13), transparent 26rem),
+    radial-gradient(circle at 92% 24%, rgba(116, 47, 28, .10), transparent 30rem),
+    linear-gradient(135deg, #f8f1e6 0%, #fffaf3 45%, #f3eadc 100%);
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  width: 34rem;
+  height: 34rem;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: .25;
+  pointer-events: none;
+  animation: glassOrbFloat 16s ease-in-out infinite alternate;
+}
+
+body::before {
+  top: 8vh;
+  left: -15rem;
+  background: rgba(229, 137, 35, .24);
+}
+
+body::after {
+  right: -16rem;
+  bottom: 5vh;
+  background: rgba(116, 48, 28, .18);
+  animation-delay: -6s;
+}
+
+.navbar,
+.floating-card,
+.map-shell,
+.premium-map-shell,
+.mandal-card,
+.countdown-card,
+.detail-modal-glass,
+.community-popup,
+.admin-card,
+.stats,
+.content-section {
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.68), rgba(255,255,255,.32)),
+    var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(30px) saturate(150%);
+  -webkit-backdrop-filter: blur(30px) saturate(150%);
+}
+
+.navbar {
+  background: rgba(255, 255, 255, .50);
+  border-color: rgba(255,255,255,.88);
+  box-shadow: 0 18px 70px rgba(65, 42, 22, .12), inset 0 1px rgba(255,255,255,.9);
+}
+
+.navbar::after,
+.mandal-card::after,
+.countdown-card::after,
+.detail-modal-glass::after,
+.community-popup::after,
+.admin-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background: linear-gradient(115deg, rgba(255,255,255,.38), transparent 35%, rgba(255,255,255,.12));
+  opacity: .65;
+}
+
+.mandal-card,
+.countdown-card,
+.admin-card,
+.floating-card,
+.map-shell,
+.detail-modal-glass,
+.community-popup {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform .8s cubic-bezier(.2,.8,.2,1), box-shadow .8s ease, border-color .5s ease;
+}
+
+.mandal-card:hover,
+.countdown-card:hover,
+.admin-card:hover,
+.floating-card:hover {
+  transform: translateY(-10px) scale(1.012);
+  box-shadow: 0 34px 100px rgba(72,39,12,.18), inset 0 1px rgba(255,255,255,.95);
+  border-color: rgba(255,255,255,.95);
+}
+
+/* Scroll reveal: intentionally soft and slow for a premium feel. */
+.scroll-reveal {
+  opacity: 0;
+  transform: translate3d(0, 42px, 0) scale(.985);
+  filter: blur(10px);
+  transition:
+    opacity 1.05s cubic-bezier(.2,.8,.2,1),
+    transform 1.05s cubic-bezier(.2,.8,.2,1),
+    filter 1.05s ease;
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform, filter;
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0,0,0) scale(1);
+  filter: blur(0);
+}
+
+.animate-section {
+  will-change: transform;
+}
+
+.hero-art,
+.hero-orbit,
+.map-floating-badge,
+.floating-card {
+  animation: gentleFloat 7s ease-in-out infinite;
+}
+
+.loader-glow,
+.community-popup-glow {
+  filter: blur(35px);
+}
+
+.countdown-section {
+  position: relative;
+  isolation: isolate;
+}
+
+.countdown-section::before {
+  content: "ॐ";
+  position: absolute;
+  inset: auto 4% -1.2rem auto;
+  z-index: -1;
+  font-size: clamp(9rem, 22vw, 20rem);
+  line-height: 1;
+  color: rgba(155, 99, 35, .045);
+  pointer-events: none;
+}
+
+@keyframes glassOrbFloat {
+  from { transform: translate3d(0, -12px, 0) scale(1); }
+  to { transform: translate3d(45px, 32px, 0) scale(1.12); }
+}
+
+@keyframes gentleFloat {
+  0%, 100% { transform: translate3d(0,0,0); }
+  50% { transform: translate3d(0,-8px,0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .navbar,
+  .mandal-card,
+  .countdown-card,
+  .admin-card,
+  .map-shell,
+  .detail-modal-glass,
+  .community-popup {
+    backdrop-filter: blur(22px) saturate(145%);
+    -webkit-backdrop-filter: blur(22px) saturate(145%);
+  }
+
+  .scroll-reveal {
+    transform: translate3d(0, 24px, 0) scale(.99);
+    filter: blur(6px);
+  }
+}

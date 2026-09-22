@@ -15,20 +15,23 @@ export default function Timeline() {
         <div className="timeline-heading">
           <span className="section-kicker">DARSHAN JOURNEY</span>
           <h2 id="timeline-title">From search to <em>darshan.</em></h2>
-          <p>Everything you need to make your Mandal Darshan plan simple, quick and memorable.</p>
+          <p>Plan your visit in a simple five-step journey.</p>
         </div>
-        <div className="timeline-track">
+
+        <ol className="timeline-track">
           {steps.map(({ icon: Icon, label, text }, index) => (
-            <article className="timeline-step" key={label} style={{ "--timeline-index": index }}>
-              <div className="timeline-node"><Icon size={20} /></div>
+            <li className="timeline-step" key={label} style={{ "--timeline-index": index }}>
+              <div className="timeline-node" aria-hidden="true">
+                <Icon size={21} strokeWidth={2.2} />
+              </div>
               <div className="timeline-step-copy">
                 <span>0{index + 1}</span>
                 <h3>{label}</h3>
                 <p>{text}</p>
               </div>
-            </article>
+            </li>
           ))}
-        </div>
+        </ol>
       </div>
     </section>
   );

@@ -1,44 +1,26 @@
-import { Download, Plus } from "lucide-react";
+import { Download, Plus, Search } from "lucide-react";
 import usePWAInstall from "../hooks/usePWAInstall";
 
 export default function Navbar({ onExplore, onMap, onAddMandal }) {
   const { canInstall, isInstalled, promptInstall } = usePWAInstall();
-
   return (
-    <header className="navbar-wrap">
-      <nav className="navbar">
-        <button className="brand" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
-          <span className="brand-mark">ॐ</span>
-          <span>
-            <strong>Mandal Darshan</strong>
-            <small>Ganpati Mandal Locator</small>
-          </span>
+    <header className="navbar-v2">
+      <nav>
+        <button className="brand-v2" onClick={()=>window.scrollTo({top:0,behavior:"smooth"})}>
+          <span className="brand-v2-symbol">ॐ</span>
+          <span><b>MANDAL</b><small>DARSHAN</small></span>
         </button>
-
-        <div className="nav-links">
-          <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>Home</button>
-          <button onClick={onExplore}>Explore</button>
+        <div className="nav-v2-links">
+          <button onClick={()=>window.scrollTo({top:0,behavior:"smooth"})}>Home</button>
+          <button onClick={onExplore}>Directory</button>
           <button onClick={onMap}>Map</button>
           <a href="#about">About</a>
-          <button className="nav-add-mandal" onClick={onAddMandal}><Plus size={16} /> Add Mandal</button>
         </div>
-
-        {canInstall && (
-          <button
-            className="button button-primary nav-install"
-            onClick={promptInstall}
-          >
-            <Download size={17} />
-            Install App
-          </button>
-        )}
-        
-        {isInstalled && (
-          <button className="button button-primary nav-install" disabled>
-            <Download size={17} />
-            Installed
-          </button>
-        )}
+        <div className="nav-v2-actions">
+          {canInstall && <button className="nav-install-v2" onClick={promptInstall}><Download size={16}/> Install</button>}
+          {isInstalled && <span className="nav-installed">Installed</span>}
+          <button className="nav-add-v2" onClick={onAddMandal}><Plus size={17}/> Add your Mandal</button>
+        </div>
       </nav>
     </header>
   );

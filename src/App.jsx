@@ -171,6 +171,7 @@ function PublicApp() {
     const selector = [
       "main > section",
       ".mandal-card",
+      ".mandal-card-v2",
       ".map-shell",
       ".countdown-section",
       ".stats",
@@ -376,7 +377,7 @@ export default function App() {
 
     const observeVisibleElements = () => {
       document
-        .querySelectorAll('.animate-section, .mandal-card, .glass-panel, .admin-card')
+        .querySelectorAll('.animate-section, .mandal-card, .mandal-card-v2, .glass-panel, .admin-card')
         .forEach((element) => observer.observe(element));
     };
 

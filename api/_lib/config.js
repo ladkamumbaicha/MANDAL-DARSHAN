@@ -13,7 +13,7 @@ export const config = {
   // MONGODB
   // ----------------------------------------------------------
   mongodbUri:
-    "mongodb+srv://dakshbudhel123_db_user:0H9Pq18uMFuVo1tk@cluster0.ljj9xq8.mongodb.net/ganpati_locatormongodb+srv://dakshbudhel123_db_user:0H9Pq18uMFuVo1tk@cluster0.ljj9xq8.mongodb.net/ganpati_locator",
+    "mongodb+srv://dakshbudhel123_db_user:0H9Pq18uMFuVo1tk@cluster0.ljj9xq8.mongodb.net/ganpati_locator",
 
   mongodbDb: "ganpati_locator",
 

@@ -1,10 +1,10 @@
 {
   "name": "mandal-locator",
-  "version": "1.0.0",
-  "description": "Ganpati Mandal Locator",
+  "version": "1.1.0",
+  "description": "Ganpati Mandal Locator for Mumbai",
   "main": "server.js",
   "scripts": {
-    "build": "echo Build complete - Mandal Locator is ready",
+    "build": "node -e \"console.log('Mandal Locator build complete')\"",
     "start": "node server.js",
     "dev": "node server.js"
   },

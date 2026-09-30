@@ -1,1 +1,19 @@
-{"name":"mandal-locator","version":"1.0.0","main":"server.js","scripts":{"start":"node server.js","dev":"node server.js"},"engines":{"node":"22.x"},"dependencies":{"cors":"^2.8.5","express":"^5.1.0","mongoose":"^8.18.0"}}
+{
+  "name": "mandal-locator",
+  "version": "1.0.0",
+  "description": "Ganpati Mandal Locator",
+  "main": "server.js",
+  "scripts": {
+    "build": "echo Build complete - Mandal Locator is ready",
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": "22.x"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "mongoose": "^8.18.0"
+  }
+}

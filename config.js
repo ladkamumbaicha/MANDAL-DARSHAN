@@ -1,5 +1,5 @@
 const MONGODB_URI =
-  "mongodb+srv://dakshbudhel123_db_user:YOUR_NEW_MONGODB_PASSWORD@cluster0.ljj9xq8.mongodb.net/ganpati_locator?retryWrites=true&w=majority";
+  "mongodb+srv://dakshbudhel123_db_user:<daksh799@>@cluster0.vooa4ju.mongodb.net/?appName=Cluster0";
 
 const DB_NAME = "ganpati_locator";
 const MONGODB_COLLECTION = "mandals";

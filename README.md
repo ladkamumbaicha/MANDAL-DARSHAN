@@ -1,29 +1,9 @@
-# Ganpati Mandal Locator
-
-Premium sacred-temple themed Ganpati Mandal discovery website.
-
-## Local setup
-
-```bash
-npm install
-npm run dev
-```
-
-## Production
-
-```bash
-npm run build
-npm start
-```
-
-## MongoDB
-
-The MongoDB connection string is configured in `api/_lib/config.js` so Render does not need a `MONGODB_URI` environment variable.
-
-**Security:** keep the GitHub repository private if you place a real MongoDB connection string in source code. Do not publish database credentials in a public repository.
-
-Replace `PASTE_YOUR_MONGODB_CONNECTION_STRING_HERE` in `api/_lib/config.js` with your real connection string before deployment. The app does **not** read `MONGODB_URI` from Render.
-
-Because a real MongoDB URI contains database credentials, keep the GitHub repository **private**. Never publish the real URI in a public repository.
-
-Admin login values (`ADMIN_EMAIL`, `ADMIN_PASSWORD`, `JWT_SECRET`) can remain Render environment variables.
+# Mandal Locator
+1. Edit config.js with MongoDB details and admin password.
+2. npm install
+3. npm start
+4. Open http://localhost:10000
+5. Admin: http://localhost:10000/admin
+Render: Build `npm install`, Start `npm start`.
+Vercel: included vercel.json.
+MongoDB credentials stay server-side in config.js as requested. Do not publish real credentials to GitHub.

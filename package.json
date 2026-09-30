@@ -1,18 +1,20 @@
 {
   "name": "mandal-locator",
-  "version": "1.1.0",
-  "type": "module",
+  "version": "1.0.0",
+  "description": "Ganpati Mandal Locator",
+  "main": "server.js",
   "scripts": {
     "build": "node -e \"console.log('Mandal Locator build complete')\"",
     "start": "node server.js",
     "dev": "node server.js"
+  },
+  "engines": {
+    "node": "22.x"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^5.1.0",
     "mongoose": "^8.18.0"
   },
-  "engines": {
-    "node": "22.x"
-  }
+  "type": "module"
 }

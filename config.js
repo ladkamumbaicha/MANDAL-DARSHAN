@@ -4,8 +4,8 @@ const MONGODB_URI =
 const DB_NAME = "ganpati_locator";
 const MONGODB_COLLECTION = "mandals";
 const ADMIN_EMAIL = "dakshbudhel123@gmail.com";
-const ADMIN_PASSWORD = "YOUR_NEW_ADMIN_PASSWORD";
-const JWT_SECRET = "YOUR_NEW_RANDOM_JWT_SECRET";
+const ADMIN_PASSWORD = "ladkamumbaicha@";
+const JWT_SECRET = "dakshbudhel123@gmail.com";
 
 export {
   MONGODB_URI,
@@ -13,5 +13,6 @@ export {
   MONGODB_COLLECTION,
   ADMIN_EMAIL,
   ADMIN_PASSWORD,
-  JWT_SECRET
+  JWT_SECRET,
+  ADMIN
 };

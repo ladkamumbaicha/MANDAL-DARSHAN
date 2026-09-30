@@ -1,24 +1,29 @@
-// IMPORTANT: The MongoDB password that was previously pasted into chat is exposed.
-// Rotate it in MongoDB Atlas before deployment and put the NEW password below.
 const MONGODB_URI =
-  "mongodb+srv://dakshbudhel123_db_user:REPLACE_WITH_NEW_PASSWORD@cluster0.ljj9xq8.mongodb.net/ganpati_locator?retryWrites=true&w=majority";
+  "mongodb+srv://dakshbudhel123_db_user:YOUR_NEW_MONGODB_PASSWORD@cluster0.ljj9xq8.mongodb.net/ganpati_locator?retryWrites=true&w=majority";
 
 const DB_NAME = "ganpati_locator";
+
 const MONGODB_COLLECTION = "mandals";
+
 const ADMIN_EMAIL = "dakshbudhel123@gmail.com";
 
+const ADMIN_PASSWORD =
+  "ladkamumbaicha@";
+
+const JWT_SECRET =
+  "dakshbudhel123_secret_key";
+
 const ADMIN = {
-  username: "ladkamumbaicha@gmail.com",
-  password: "ladkamumbaicha@"
+  username: ADMIN_EMAIL,
+  password: ADMIN_PASSWORD
 };
 
-const JWT_SECRET = "adadadadadadwdasdad";
-
-module.exports = {
+export {
   MONGODB_URI,
   DB_NAME,
   MONGODB_COLLECTION,
   ADMIN_EMAIL,
-  ADMIN,
-  JWT_SECRET
+  ADMIN_PASSWORD,
+  JWT_SECRET,
+  ADMIN
 };

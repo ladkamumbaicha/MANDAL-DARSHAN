@@ -1,21 +1,22 @@
 const MONGODB_URI =
-  "mongodb+srv://dakshbudhel123_db_user:YOUR_NEW_MONGODB_PASSWORD@cluster0.ljj9xq8.mongodb.net/ganpati_locator?retryWrites=true&w=majority";
+  "mongodb+srv://dakshbudhel123_db_user:0H9Pq18uMFuVo1tk@cluster0.ljj9xq8.mongodb.net/ganpati_locator";
 
 const DB_NAME = "ganpati_locator";
 
 const MONGODB_COLLECTION = "mandals";
 
-const ADMIN_EMAIL = "dakshbudhel123@gmail.com";
+const ADMIN_EMAIL =
+  "dakshbudhel123@gmail.com";
 
 const ADMIN_PASSWORD =
-  "ladkamumbaicha@";
+  "YOUR_NEW_ADMIN_PASSWORD";
 
 const JWT_SECRET =
-  "dakshbudhel123_secret_key";
+  "YOUR_NEW_RANDOM_SECRET";
 
 const ADMIN = {
-  username: ADMIN_EMAIL,
-  password: ADMIN_PASSWORD
+  username: "dakshvasani7@gmail.com",
+  password: ladkamumbaicha@7
 };
 
 export {

@@ -16,7 +16,7 @@ const JWT_SECRET =
 
 const ADMIN = {
   username: "dakshvasani7@gmail.com",
-  password: ladkamumbaicha@7
+  password: "ladkamumbaicha@7"
 };
 
 export {
